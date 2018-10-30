@@ -5,4 +5,4 @@ while number !=0:
         counter +=1
     number = int(input("Enter next number\n"))
 print ("You entered", counter, "numbers")
-print ("NONIINNNjjeeekh")
+print ("asdggteemu")
