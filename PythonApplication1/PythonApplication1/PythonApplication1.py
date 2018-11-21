@@ -6,3 +6,4 @@ while number !=0:
     number = int(input("Enter next number\n"))
 print ("You entered", counter, "numbers")
 print ("asdggteemu")
+print("testi t aleksi")
