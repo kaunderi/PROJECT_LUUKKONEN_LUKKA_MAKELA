@@ -7,3 +7,4 @@ while number !=0:
 print ("You entered", counter, "numbers")
 print ("asdggteemu")
 print("testi t aleksi")
+print("testi")
