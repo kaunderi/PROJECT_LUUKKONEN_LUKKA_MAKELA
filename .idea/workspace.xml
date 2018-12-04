@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b318260-328c-4c14-85c0-b71252263f67" name="Default Changelist" comment="testi">
-      <change afterPath="$PROJECT_DIR$/PythonApplication2/PythonApplication2/PythonApplication2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PythonApplication2/PythonApplication2/myImport.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QRhuntah/QRhuntah.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QRhuntah/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QRhuntah/mainwindow.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QRhuntah/mainwindow.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QRhuntah/mainwindow.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QRhuntah/myserver.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QRhuntah/myserver.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QRhuntah/pyServer2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QRhuntah/socketsignal.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QRhuntah/socketsignal.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonApplication1/PythonApplication1.sln" beforeDir="false" afterPath="$PROJECT_DIR$/PythonApplication2/PythonApplication2.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonApplication1/PythonApplication1/PythonApplication1.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonApplication1/PythonApplication1/PythonApplication1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonApplication1/PythonApplication1/PythonApplication1.pyproj" beforeDir="false" afterPath="$PROJECT_DIR$/PythonApplication2/PythonApplication2/PythonApplication2.pyproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonApplication1/matrice.py" beforeDir="false" afterPath="$PROJECT_DIR$/PythonApplication1/matrice.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,14 +24,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gitignore" value="2" />
+          <entry key="gitignore" value="33" />
           <entry key="py" value="65" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="PLAIN_TEXT" value="38" />
           <entry key="Python" value="65" />
         </counts>
       </usages-collector>
@@ -72,20 +56,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PythonApplication1/PythonApplication1/PythonApplication1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="243" column="51" selection-start-line="243" selection-start-column="51" selection-end-line="243" selection-end-column="51" />
+            <state relative-caret-position="630">
+              <caret line="252" column="60" selection-start-line="252" selection-start-column="60" selection-end-line="252" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -144,8 +119,7 @@
             <path>
               <item name="PROJECT_LUUKKONEN_LUKKA_MAKELA" type="b2602c69:ProjectViewProjectNode" />
               <item name="PROJECT_LUUKKONEN_LUKKA_MAKELA" type="462c0819:PsiDirectoryNode" />
-              <item name="PythonApplication1" type="462c0819:PsiDirectoryNode" />
-              <item name="PythonApplication1" type="462c0819:PsiDirectoryNode" />
+              <item name="PythonApplication2" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -309,7 +283,7 @@
     <frame x="0" y="0" width="1920" height="1035" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11070111" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11070111" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -320,7 +294,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32893288" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49920928" visible="true" weight="0.22882289" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49920928" visible="true" weight="0.22882289" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007907" side_tool="true" weight="0.10121012" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32893288" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -378,8 +352,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="243" column="51" selection-start-line="243" selection-start-column="51" selection-end-line="243" selection-end-column="51" />
+        <state relative-caret-position="630">
+          <caret line="252" column="60" selection-start-line="252" selection-start-column="60" selection-end-line="252" selection-end-column="60" />
         </state>
       </provider>
     </entry>
