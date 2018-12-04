@@ -29,21 +29,22 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>220</y>
-      <width>91</width>
-      <height>21</height>
+      <x>260</x>
+      <y>80</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Start/Stop manual 
+robot control</string>
     </property>
    </widget>
    <widget class="QLabel" name="dirLabel">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>170</y>
+      <x>290</x>
+      <y>120</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -66,7 +67,7 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>150</x>
       <y>220</y>
       <width>121</width>
       <height>51</height>
@@ -85,7 +86,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>10</y>
+      <y>0</y>
       <width>201</width>
       <height>81</height>
      </rect>
@@ -105,7 +106,7 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>40</x>
       <y>80</y>
       <width>101</width>
       <height>31</height>
@@ -118,8 +119,8 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>80</y>
+      <x>40</x>
+      <y>120</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -131,8 +132,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>120</y>
+      <x>10</x>
+      <y>160</y>
       <width>171</width>
       <height>41</height>
      </rect>

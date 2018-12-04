@@ -2,9 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "keypress.h"
-#include "mytcpsocketclass.h"
-#include "mytcpsocketwithsignals.h"
 #include "socketsignal.h"
 #include <QtCore>
 

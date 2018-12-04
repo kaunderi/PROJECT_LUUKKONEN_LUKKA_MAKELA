@@ -2,9 +2,6 @@
 #include <QApplication>
 #include <QString>
 #include <QDebug>
-#include "mytcpsocketclass.h"
-#include "mytcpsocketwithsignals.h"
-#include "myserver.h"
 #include "socketsignal.h"
 
 

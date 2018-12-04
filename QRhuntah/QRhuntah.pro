@@ -28,18 +28,12 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    mytcpsocketclass.cpp \
-    mytcpsocketwithsignals.cpp \
     myserver.cpp \
-    keypress.cpp \
     socketsignal.cpp
 
 HEADERS += \
         mainwindow.h \
-    mytcpsocketclass.h \
-    mytcpsocketwithsignals.h \
     myserver.h \
-    keypress.h \
     socketsignal.h
 
 FORMS += \
