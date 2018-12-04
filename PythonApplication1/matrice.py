@@ -28,10 +28,10 @@ class RobotMovement(object):
             self.gpg.turn_degrees(self.degree)
         elif not self.object_detection(self.distance):
             self.gpg.drive_cm(self.distance)
-            y += 1
+            self.y += 1
         else:
             self.gpg.drive_cm(self.distance)
-            y += 1
+            self.y += 1
 
     def forward(self, distance,x,y):
         if self.object_detection(distance):
@@ -55,12 +55,12 @@ class RobotMovement(object):
 
     def run(self):
         self.forward(30,self.x, self.y)
+        self.print_matrix()
 
 def main():
     gpg = RobotMovement()
     while True:
         gpg.run()
-        gpg.print_matrix()
         gpg.matrix_mapping()
 
 
