@@ -245,9 +245,4 @@ ModelManifest.xml
 build-QRhuntah-Desktop_Qt_5_11_2_MinGW_32bit-Debug/
 
 # Aleksin
-.idea/PROJECT_LUUKKONEN_LUKKA_MAKELA.iml/
-.idea/misc.xml/
-.idea/modules.xml/
-.idea/vcs.xml/
-.idea/workspace.xml/
-PythonApplication1/PythonApplication1/PythonApplication1.py/
+.idea/
