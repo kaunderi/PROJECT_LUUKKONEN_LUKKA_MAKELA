@@ -63,6 +63,5 @@ def main():
         gpg.run()
         gpg.matrix_mapping()
 
-
 if __name__ == '__main__':
     main()
