@@ -1,0 +1,15 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\mytcpsocketclass.o
+./debug\mytcpsocketwithsignals.o
+./debug\myserver.o
+./debug\keypress.o
+./debug\socketsignal.o
+./debug\moc_mainwindow.o
+./debug\moc_mytcpsocketclass.o
+./debug\moc_mytcpsocketwithsignals.o
+./debug\moc_myserver.o
+./debug\moc_keypress.o
+./debug\moc_socketsignal.o
+);

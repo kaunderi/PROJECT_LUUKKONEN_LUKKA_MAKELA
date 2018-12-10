@@ -2,9 +2,9 @@ import urllib.request
 import tweepy
 
 def dl_image():
-	QR_koodi = "Jaajaaajaaajaajaaajaaa"
+	QR_koodi = "luikka"
 	url = "https://chart.googleapis.com/chart?cht=qr&chs=450x450&chl="+QR_koodi+"&choe=utf-8"
-	urllib.request.urlretrieve(url, "Projects/Twitter/Images/testia.jpg")
+	urllib.request.urlretrieve(url, "Images/testia.jpg")
 	twiittaus(QR_koodi)
 
 	
@@ -21,7 +21,7 @@ def twiittaus(tweet):
 	auth.set_access_token(access_token, access_token_secret) 
 	api = tweepy.API(auth) 
 	#tweet ="Testailua" 
-	image_path ="Projects/Twitter/Images/testia.jpg" 
+	image_path ="Images/testia.jpg" 
   
 	# mediafilen uppaus 
 	status = api.update_with_media(image_path, tweet)  

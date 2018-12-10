@@ -1,0 +1,15 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\mytcpsocketclass.o
+./release\mytcpsocketwithsignals.o
+./release\myserver.o
+./release\keypress.o
+./release\socketsignal.o
+./release\moc_mainwindow.o
+./release\moc_mytcpsocketclass.o
+./release\moc_mytcpsocketwithsignals.o
+./release\moc_myserver.o
+./release\moc_keypress.o
+./release\moc_socketsignal.o
+);
