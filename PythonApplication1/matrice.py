@@ -2,6 +2,7 @@ import easygopigo3
 import pyServer2
 import time
 import twitterBot
+import mySql_insert
 
 class RobotMovement(object):
     """docstring for RobotMovement"""
@@ -66,6 +67,9 @@ class RobotMovement(object):
         self.print_matrix()
 
 def main():
+
+    QRmsg = "Teemu_Aleksi"
+
     print("main matrice")
     server = pyServer2.tcpServer()
     #twitterBot.dl_image() #Insert QR code to twitter
@@ -78,7 +82,8 @@ def main():
         #gpg.matrix_mapping()
         time.sleep(1)
         if measurement < 50:
-            twitterBot.dl_image("puolipilivsta")
+            mySql_insert.insertdata(QRmsg)
+            twitterBot.dl_image(QRmsg)
         print("matrice")
 
 
