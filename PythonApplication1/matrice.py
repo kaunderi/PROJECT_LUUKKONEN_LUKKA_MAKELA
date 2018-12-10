@@ -1,6 +1,7 @@
 import easygopigo3
 import pyServer2
 import time
+import twitterBot
 
 class RobotMovement(object):
     """docstring for RobotMovement"""
@@ -53,7 +54,7 @@ class RobotMovement(object):
 
     def raw_distance(self):
         measurement = self.my_distance_sensor.read_mm()
-        print("Distance is " + str(measurement))
+        return measurement
 
 
     def matrix_mapping(self):
@@ -67,14 +68,18 @@ class RobotMovement(object):
 def main():
     print("main matrice")
     server = pyServer2.tcpServer()
+    #twitterBot.dl_image() #Insert QR code to twitter
     #gpg = easygopigo3.EasyGoPiGo3()
     gpg = RobotMovement()
     while True:
-       gpg.raw_distance()
-       #gpg.run()
-       #gpg.matrix_mapping()
-       time.sleep(1)
-       print("matrice")
+        measurement = gpg.raw_distance()
+        print("Distance is " + str(measurement))
+        #gpg.run()
+        #gpg.matrix_mapping()
+        time.sleep(1)
+        if measurement < 50:
+            twitterBot.dl_image("puolipilivsta")
+        print("matrice")
 
 
 if __name__ == '__main__':
