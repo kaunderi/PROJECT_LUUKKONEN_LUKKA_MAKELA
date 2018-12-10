@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import time
 import easygopigo3
 import socket
@@ -95,7 +93,7 @@ class tcpServer:
                 start_new_thread(self.threaded_client, (conn,))
 
     def main1(self):
-
+        self.gpg.stop()
         print("hello from class")
         s = self.setupServer()
         s.listen(5)
@@ -115,8 +113,9 @@ class tcpServer:
                 self.s.close()
                 break
 '''
+'''
 x = tcpServer()
 while True:
     print("kippo")
     time.sleep(2)
-
+'''

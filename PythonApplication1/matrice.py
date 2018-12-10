@@ -1,10 +1,12 @@
-import easygopigo3 as easy
+import easygopigo3
+import pyServer2
+import time
 
 class RobotMovement(object):
     """docstring for RobotMovement"""
     def __init__(self):
         super(RobotMovement, self).__init__()
-        self.gpg = easy.EasyGoPiGo3()
+        self.gpg = easygopigo3.EasyGoPiGo3()
         self.my_distance_sensor = self.gpg.init_distance_sensor()
         self.matrix = [[0,0,0,0,],
                   [0,0,0,0,],
@@ -49,6 +51,11 @@ class RobotMovement(object):
         else:
             return False
 
+    def raw_distance(self):
+        measurement = self.my_distance_sensor.read_mm()
+        print("Distance is " + str(measurement))
+
+
     def matrix_mapping(self):
         self.current_position = self.matrix[self.x][self.y]
         print(self.current_position)
@@ -58,10 +65,17 @@ class RobotMovement(object):
         self.print_matrix()
 
 def main():
+    print("main matrice")
+    server = pyServer2.tcpServer()
+    #gpg = easygopigo3.EasyGoPiGo3()
     gpg = RobotMovement()
     while True:
-        gpg.run()
-        gpg.matrix_mapping()
+       gpg.raw_distance()
+       #gpg.run()
+       #gpg.matrix_mapping()
+       time.sleep(1)
+       print("matrice")
+
 
 if __name__ == '__main__':
     main()
