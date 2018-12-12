@@ -42,3 +42,5 @@ def readQR():
     print("[INFO] cleaning up...")
     vs.stop()
     return barcodeData
+
+
