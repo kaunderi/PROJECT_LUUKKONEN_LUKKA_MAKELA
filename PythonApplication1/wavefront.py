@@ -137,11 +137,6 @@ class waveFrontPlanner:
             self.__new_state = self.propagateWavefront()
             #update location of robot
             if self.__new_state == 1:
-                if self.object_detection(self.distance):
-                    print("Object detected!")
-                    self.__map[self.__robot_x - 1][self.__robot_y] = self.__wall
-                    self.printMap()
-                    continue
                 self.__robot_x -= 1
                 if self.turned_left:
                     self.gpg.turn_degrees(-94)
@@ -156,11 +151,6 @@ class waveFrontPlanner:
                         (self.__robot_x, self.__robot_y))
                 path.append((self.__robot_x, self.__robot_y))
             if self.__new_state == 2:
-                if self.object_detection(self.distance):
-                    print("Object detected!")
-                    self.__map[self.__robot_x][self.__robot_y + 1] = self.__wall
-                    self.printMap()
-                    continue
                 self.__robot_y += 1
                 if self.forward:
                     self.gpg.turn_degrees(-94)
@@ -181,11 +171,6 @@ class waveFrontPlanner:
                         (self.__robot_x, self.__robot_y))
                 path.append((self.__robot_x, self.__robot_y))
             if self.__new_state == 3:
-                if self.object_detection(self.distance):
-                    print("Object detected!")
-                    self.__map[self.__robot_x + 1][self.__robot_y] = self.__wall
-                    self.printMap()
-                    continue
                 self.__robot_x += 1
                 if self.turned_left:
                     self.gpg.turn_degrees(94)
@@ -200,11 +185,6 @@ class waveFrontPlanner:
                         (self.__robot_x, self.__robot_y))
                 path.append((self.__robot_x, self.__robot_y))
             if self.__new_state == 4:
-                if self.object_detection(self.distance):
-                    print("Object detected!")
-                    self.__map[self.__robot_x][self.__robot_y - 1] = self.__wall
-                    self.printMap()
-                    continue
                 self.__robot_y -= 1
                 if self.forward:
                     self.gpg.turn_degrees(94)
