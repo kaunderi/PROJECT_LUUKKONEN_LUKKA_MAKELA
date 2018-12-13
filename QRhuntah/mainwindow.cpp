@@ -27,9 +27,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    MainWindow::close();
-    //stest.connected("CMD");
-    //qDebug() << stest.checkConnection();
+    //MainWindow::close();
+    stest.connected("CMD");
+    qDebug() << stest.checkConnection();
 
 }
 void MainWindow::keyPressEvent( QKeyEvent * event)

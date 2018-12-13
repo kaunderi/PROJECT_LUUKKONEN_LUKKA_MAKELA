@@ -82,13 +82,13 @@ def main():
     #gpg = easygopigo3.EasyGoPiGo3()
     gpg = RobotMovement()
     while True:
-<<<<<<< HEAD
+
         measurement = gpg.raw_distance()
         print("Distance is " + str(measurement))
         #gpg.run()
         #gpg.matrix_mapping()
         time.sleep(1)
-        if measurement < 50:
+        if measurement < 180:
             QRmsg = barcode_scanner_video.readQR()
             if QRmsg is None:
                 print("No Qr code")
@@ -96,11 +96,11 @@ def main():
                 mySql_insert.insertdata(QRmsg)
                 twitterBot.dl_image(QRmsg)
         print("matrice loopp")
-=======
-        gpg.run()
-        gpg.matrix_mapping()
-        input()
->>>>>>> 9282a531535d9b2d9bfb5b2d91f0a2f4ef00253d
+
+        #gpg.run()
+        #gpg.matrix_mapping()
+        #input()
+
 
 
 if __name__ == '__main__':
