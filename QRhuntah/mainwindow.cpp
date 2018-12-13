@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     qDebug() << "constmain";
     ui->setupUi(this);
     MyTimer();
+
 }
 
 MainWindow::~MainWindow()
