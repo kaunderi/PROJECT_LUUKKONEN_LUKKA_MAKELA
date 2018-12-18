@@ -79,6 +79,7 @@ class waveFrontPlanner:
         #Robots orientation
         self.orientation = 0
         self.gpg.set_speed(200)
+        self.degree = 94
     ###########################################################################
 
     def __del__(self):
@@ -120,6 +121,26 @@ class waveFrontPlanner:
         return  (self.__goal_x, self.__goal_y)
     ###########################################################################
 
+    def orientation(self, degree):
+        self.orientation = self.orientation + degree
+        if self.orientation == 360:
+            self.orientation = 0
+        if self.orientation == -360:
+            self.orientation = 0
+
+    def orientation_correction(self):
+        orientation = 360 - self.orientation
+        if orientation > 0:
+            correction = 360 - orientation
+            correction = round(correction / 90)
+            self.gpg.turn_degrees(correction*self.degree)
+        if orientation < 0:
+            correction = 360 + orientation
+            correction = round(correction / 90)
+            self.gpg.turn_degrees(-correction*self.degree)
+
+
+
     def run(self, prnt=False):
         """
         The entry point for the robot algorithm to use wavefront propagation.
@@ -139,10 +160,12 @@ class waveFrontPlanner:
             if self.__new_state == 1:
                 self.__robot_x -= 1
                 if self.turned_left:
-                    self.gpg.turn_degrees(-94)
+                    self.gpg.turn_degrees(-self.degree)
+                    self.orientation(-self.degree)
                     self.turned_left = False
                 if self.turned_right:
-                    self.gpg.turn_degrees(94)
+                    self.gpg.turn_degrees(self.degree)
+                    self.orientation(self.degree)
                     self.turned_right = False
                 self.backward = True
                 self.gpg.drive_cm(self.distance)
@@ -153,17 +176,20 @@ class waveFrontPlanner:
             if self.__new_state == 2:
                 self.__robot_y += 1
                 if self.forward:
-                    self.gpg.turn_degrees(-94)
+                    self.gpg.turn_degrees(-self.degree)
+                    self.orientation(self.degree)
                     self.gpg.drive_cm(self.distance)
                     self.forward = False
                     self.turned_left = True
                 elif self.backward:
-                    self.gpg.turn_degrees(94)
+                    self.gpg.turn_degrees(self.degree)
+                    self.orientation(self.degree)
                     self.gpg.drive_cm(self.distance)
                     self.backward = False
                     self.turned_left = True
                 elif not self.turned_left:
-                    self.gpg.turn_degrees(-94)
+                    self.gpg.turn_degrees(-self.degree)
+                    self.orientation(-self.degree)
                     self.turned_left = True
                 else:
                     self.gpg.drive_cm(self.distance)
@@ -173,10 +199,12 @@ class waveFrontPlanner:
             if self.__new_state == 3:
                 self.__robot_x += 1
                 if self.turned_left:
-                    self.gpg.turn_degrees(94)
+                    self.gpg.turn_degrees(self.degree)
+                    self.orientation(self.degree)
                     self.turned_left = False
                 if  self.turned_right:
-                    self.gpg.turn_degrees(-94)
+                    self.gpg.turn_degrees(-self.degree)
+                    self.orientation(-self.degree)
                     self.turned_right = False
                 self.forward = True
                 self.gpg.drive_cm(self.distance)
@@ -187,17 +215,20 @@ class waveFrontPlanner:
             if self.__new_state == 4:
                 self.__robot_y -= 1
                 if self.forward:
-                    self.gpg.turn_degrees(94)
+                    self.gpg.turn_degrees(self.degree)
+                    self.orientation(self.degree)
                     self.gpg.drive_cm(self.distance)
                     self.forward = False
                     self.turned_right = True
                 elif self.backward:
-                    self.gpg.turn_degrees(-94)
+                    self.gpg.turn_degrees(-self.degree)
+                    self.orientation(-self.degree)
                     self.gpg.drive_cm(self.distance)
                     self.backward = False
                     self.turned_right = True
                 elif not self.turned_right:
-                    self.gpg.turn_degrees(94)
+                    self.gpg.turn_degrees(self.degree)
+                    self.orientation(self.degree)
                     self.turned_right = True
                 else:
                     self.gpg.drive_cm(self.distance)
@@ -210,6 +241,7 @@ class waveFrontPlanner:
         msg = "Found the goal in %i steps:\n" % self.__steps
         msg += "Map size= %i %i\n\n" % (self.__height, self.__width)
         #self.gpg.turn_degrees(191)
+        self.orientation_correction()
         time.sleep(5)
         if prnt:
             print(msg)
