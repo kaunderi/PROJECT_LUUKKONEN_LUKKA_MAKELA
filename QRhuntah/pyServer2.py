@@ -60,6 +60,7 @@ class tcpServer:
                     break
                 else:
                     reply = "Unknow command"
+                    break
 
                 #conn.sendall(str.encode("ok"))
                 #print("Data has been sent!")
@@ -77,7 +78,7 @@ class tcpServer:
                     elif dataMessage[1] == "83":
                         self.gpg.backward()
                     elif dataMessage[1] == "STOP":
-                        print("stop this shit")
+                        #print("stop this shit")
                         self.gpg.stop()
                     else:
                         print("Manual Control ON")
@@ -94,7 +95,6 @@ class tcpServer:
 
     def main1(self):
         self.gpg.stop()
-        print("hello from class")
         s = self.setupServer()
         s.listen(5)
 

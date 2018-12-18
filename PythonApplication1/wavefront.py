@@ -61,7 +61,7 @@ class waveFrontPlanner:
         self.__temp_B = 0
         self.__counter = 0
         self.__steps = 0 #determine how processor intensive the algorithm was
-        self.degree = 94
+        self.degree = 95
 
         #when searching for a node with a lower value
         self.__minimum_node = 250
@@ -398,6 +398,9 @@ if __name__ == "__main__":
                 [000,000,000,000,000,000,000,000,000,000,000,000],\
                 [000,000,000,000,000,000,000,000,000,000,000,000]]'''
 
+    gpg = easygopigo3.EasyGoPiGo3()
+    gpg.turn_degrees(180)
+
     #start = time.time()
     planner = waveFrontPlanner(False)
     planner.setGoalPosition(0, 6)
@@ -406,6 +409,8 @@ if __name__ == "__main__":
     planner.run(True)
     print(planner.robotPosition)
     del planner
+
+    gpg.turn_degrees(180)
 
     planner = waveFrontPlanner(False)
     #print(planner1.robotPosition)

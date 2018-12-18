@@ -12,7 +12,7 @@ import time
 def readQR():
     # initialize the video stream and allow the camera sensor to warm up
     print("[INFO] skannataan...")
-    vs = VideoStream(src=0).start()
+    #vs = VideoStream(src=0).start()
     vs = VideoStream(usePiCamera=True).start()
     time.sleep(2.0)
     barcodeData = None

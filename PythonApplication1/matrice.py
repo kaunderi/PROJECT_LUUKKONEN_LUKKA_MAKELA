@@ -75,6 +75,11 @@ class RobotMovement(object):
         self.print_matrix()
 
 def matriceMove():
+
+    gpg = easygopigo3.EasyGoPiGo3()
+    gpg.turn_degrees(186)
+
+    #start = time.time()
     planner = wavefront.waveFrontPlanner(False)
     planner.setGoalPosition(0, 6)
     print(planner.goalPosition())
@@ -82,6 +87,17 @@ def matriceMove():
     planner.run(True)
     print(planner.robotPosition)
     del planner
+
+    gpg.turn_degrees(94)
+
+    planner = wavefront.waveFrontPlanner(False)
+    #print(planner1.robotPosition)
+    #print(planner1.goalPosition)
+    planner.setRobotPosition(0, 6)
+    planner.setGoalPosition(0, 0)
+    print(planner.robotPosition)
+    print(planner.goalPosition)
+    planner.run(True)
 
 def main():
 
@@ -94,24 +110,18 @@ def main():
     while True:
         measurement = gpg.raw_distance()
         print("Distance is " + str(measurement))
-        #gpg.run()
-        #gpg.matrix_mapping()
-        matriceMove()
-        time.sleep(0.2)
-        if measurement < 180:
+        if measurement < 300:
             QRmsg = barcode_scanner_video.readQR()
             if QRmsg is None:
                 print("No Qr code")
             else:
                 mySql_insert.insertdata(QRmsg)
                 twitterBot.dl_image(QRmsg)
+                matriceMove()
 
-
-        #gpg.run()
-        #gpg.matrix_mapping()
-        #input()
-
-
+        else:
+            print("no box")
+        time.sleep(1)
 
 if __name__ == '__main__':
     main()
