@@ -4,6 +4,7 @@ import time
 import twitterBot
 import mySql_insert
 import barcode_scanner_video
+import wavefront
 
 
 class RobotMovement(object):
@@ -73,6 +74,14 @@ class RobotMovement(object):
         self.forward(30)
         self.print_matrix()
 
+def matriceMove():
+    planner = wavefront.waveFrontPlanner(False)
+    planner.setGoalPosition(0, 6)
+    print(planner.goalPosition())
+    print(planner.robotPosition())
+    planner.run(True)
+    print(planner.robotPosition)
+    del planner
 
 def main():
 
@@ -81,13 +90,14 @@ def main():
     #twitterBot.dl_image() #Insert QR code to twitter
     #gpg = easygopigo3.EasyGoPiGo3()
     gpg = RobotMovement()
-    while True:
 
+    while True:
         measurement = gpg.raw_distance()
         print("Distance is " + str(measurement))
         #gpg.run()
         #gpg.matrix_mapping()
-        time.sleep(1)
+        matriceMove()
+        time.sleep(0.2)
         if measurement < 180:
             QRmsg = barcode_scanner_video.readQR()
             if QRmsg is None:
@@ -95,7 +105,7 @@ def main():
             else:
                 mySql_insert.insertdata(QRmsg)
                 twitterBot.dl_image(QRmsg)
-        print("matrice loopp")
+
 
         #gpg.run()
         #gpg.matrix_mapping()

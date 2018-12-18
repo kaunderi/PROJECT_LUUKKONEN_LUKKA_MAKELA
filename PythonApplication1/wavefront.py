@@ -61,6 +61,7 @@ class waveFrontPlanner:
         self.__temp_B = 0
         self.__counter = 0
         self.__steps = 0 #determine how processor intensive the algorithm was
+        self.degree = 94
 
         #when searching for a node with a lower value
         self.__minimum_node = 250
@@ -144,10 +145,10 @@ class waveFrontPlanner:
                     continue
                 self.__robot_x -= 1
                 if self.turned_left:
-                    self.gpg.turn_degrees(-94)
+                    self.gpg.turn_degrees(-self.degree)
                     self.turned_left = False
                 if self.turned_right:
-                    self.gpg.turn_degrees(94)
+                    self.gpg.turn_degrees(self.degree)
                     self.turned_right = False
                 self.backward = True
                 self.gpg.drive_cm(self.distance)
@@ -163,17 +164,17 @@ class waveFrontPlanner:
                     continue
                 self.__robot_y += 1
                 if self.forward:
-                    self.gpg.turn_degrees(-94)
+                    self.gpg.turn_degrees(-self.degree)
                     self.gpg.drive_cm(self.distance)
                     self.forward = False
                     self.turned_left = True
                 elif self.backward:
-                    self.gpg.turn_degrees(94)
+                    self.gpg.turn_degrees(self.degree)
                     self.gpg.drive_cm(self.distance)
                     self.backward = False
                     self.turned_left = True
                 elif not self.turned_left:
-                    self.gpg.turn_degrees(-94)
+                    self.gpg.turn_degrees(-self.degree)
                     self.turned_left = True
                 else:
                     self.gpg.drive_cm(self.distance)
@@ -188,10 +189,10 @@ class waveFrontPlanner:
                     continue
                 self.__robot_x += 1
                 if self.turned_left:
-                    self.gpg.turn_degrees(94)
+                    self.gpg.turn_degrees(self.degree)
                     self.turned_left = False
                 if  self.turned_right:
-                    self.gpg.turn_degrees(-94)
+                    self.gpg.turn_degrees(-self.degree)
                     self.turned_right = False
                 self.forward = True
                 self.gpg.drive_cm(self.distance)
@@ -207,17 +208,17 @@ class waveFrontPlanner:
                     continue
                 self.__robot_y -= 1
                 if self.forward:
-                    self.gpg.turn_degrees(94)
+                    self.gpg.turn_degrees(self.degree)
                     self.gpg.drive_cm(self.distance)
                     self.forward = False
                     self.turned_right = True
                 elif self.backward:
-                    self.gpg.turn_degrees(-94)
+                    self.gpg.turn_degrees(-self.degree)
                     self.gpg.drive_cm(self.distance)
                     self.backward = False
                     self.turned_right = True
                 elif not self.turned_right:
-                    self.gpg.turn_degrees(94)
+                    self.gpg.turn_degrees(self.degree)
                     self.turned_right = True
                 else:
                     self.gpg.drive_cm(self.distance)

@@ -61,8 +61,8 @@ class tcpServer:
                 else:
                     reply = "Unknow command"
 
-                conn.sendall(str.encode("ok"))
-                print("Data has been sent!")
+                #conn.sendall(str.encode("ok"))
+                #print("Data has been sent!")
 
                 if dataMessage[1] == "CMD":
                     manualControl = not manualControl
