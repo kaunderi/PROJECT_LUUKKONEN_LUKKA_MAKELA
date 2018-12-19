@@ -123,14 +123,18 @@ class waveFrontPlanner:
 
     def orientation_(self):
         self.__orientation = self.__orientation + self.degree
+        print(self.__orientation)
         if self.__orientation == 360:
             self.orientation = 0
+            print(self.__orientation)
         if self.__orientation == -360:
             self.__orientation = 0
             print(self.__orientation)
 
     def orientation_correction(self):
         orientation = 360 - self.__orientation
+        if self.goalPosition() == "(0, 0)":
+            return
         if orientation > 0:
             correction = 360 - orientation
             correction = int(round(correction / 90))
