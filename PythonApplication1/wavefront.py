@@ -19,8 +19,6 @@ import time
 
 class waveFrontPlanner:
 
-    __orientation: int
-
     def __init__(self, slow=False):
         self.__slow = slow
         self.__map = [[000, 999, 000, 000, 000, 000, 000],\
@@ -129,17 +127,22 @@ class waveFrontPlanner:
             self.orientation = 0
         if self.__orientation == -360:
             self.__orientation = 0
+            print(self.__orientation)
 
     def orientation_correction(self):
         orientation = 360 - self.__orientation
         if orientation > 0:
             correction = 360 - orientation
-            correction = str(round(correction / 90))
+            correction = int(round(correction / 90))
+            print(correction)
             self.gpg.turn_degrees(correction*self.degree)
         if orientation < 0:
             correction = 360 + orientation
-            correction = str(round(correction / 90))
-            self.gpg.turn_degrees(-int(correction)*self.degree)
+            correction = int(round(correction / 90))
+            print(correction)
+            self.gpg.turn_degrees(-correction)*self.degree
+        if orientation == 0:
+            return
 
 
 
@@ -149,6 +152,7 @@ class waveFrontPlanner:
 
         """
         path = []
+        self.orientation_correction()
         while self.__map[self.__robot_x][self.__robot_y] != self.__goal:
             print("Just driving around")
             if not self.forward and not self.backward:
